@@ -1,5 +1,5 @@
 const PROMPT =
-  "请帮我review下面的代码,给出具体的修改理由,对于代码总体的评价,以及修改后的代码: \n\n";
+  "请按照angular git commit规范总结下面给出的代码,+号开头的语句代表新增代码,-号开头的语句代表删除代码,并给出总结后的commit message: \n\n";
 
 const SERVER = "https://review-api.cc98-summary.top/";
 // const SERVER = 'http://localhost:3000/';

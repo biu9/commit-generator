@@ -5,7 +5,7 @@ const regxForAuthor = /Author:.*</;
 const regxForDate = /Date:.*\n/;
 const regxForEmail = /<.*>/;
 const regxForFilename = /^\+\+\+(.*)/;
-const regxForFileContent = /^\+().*/;
+const regxForFileContent = /^(?![+-]{3})[+-]/;
 
 /**
  * @description 处理git diff命令的输出
@@ -23,7 +23,7 @@ export function diffMsgProcessor(rowDiffMessage: string): Array<IFile> {
       i++;
       while (tmp[i] && !tmp[i].match(regxForFilename)) {
         if (tmp[i].match(regxForFileContent)) {
-          content += tmp[i].replace("+", "") + "\n";
+          content += tmp[i] + "\n";
         }
         i++;
       }
@@ -35,7 +35,7 @@ export function diffMsgProcessor(rowDiffMessage: string): Array<IFile> {
         content,
       });
     } else {
-      i++;
+      i+=1;
     }
   }
 

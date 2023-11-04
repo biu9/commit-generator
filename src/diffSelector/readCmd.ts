@@ -17,7 +17,7 @@ readline.emitKeypressEvents(process.stdin);
  * @description 读取命令行输入, 选择要review的变更
  * @returns {string} 选中的要review的变更的代码路径
  */
-export function readCmd(changedFiles: Array<IFile>): Promise<Array<string>> {
+export function readCmd(changedFiles: Array<IFile>): Promise<Array<IFile>> {
   return new Promise((resolve, reject) => {
     const options = changedFiles.map((file) => file.name).concat(["确认提交"]);
     const selectedIndex: number[] = [];
@@ -54,7 +54,7 @@ export function readCmd(changedFiles: Array<IFile>): Promise<Array<string>> {
             selectedIndex.map((index) => options[index]).join("\n") +
               "\n开始code review...",
           );
-          resolve(selectedIndex.map((index) => options[index]));
+          resolve(selectedIndex.map((index) => changedFiles[index]));
           rl.close();
         } else {
           if (selectedIndex.indexOf(currIndex) === -1) {
