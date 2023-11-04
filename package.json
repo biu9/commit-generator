@@ -1,0 +1,22 @@
+{
+  "name": "commit-generator",
+  "version": "1.0.0",
+  "description": "git commit message generator based on chatgpt",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "ts-node test/index.ts"
+  },
+  "keywords": [
+    "chatgpt"
+  ],
+  "author": "thy",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "typescript": "^5.2.2"
+  }
+}
