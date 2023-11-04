@@ -7,7 +7,7 @@ export enum ModelType {
   gpt316k = "gpt-3.5-turbo-16k",
 }
 
-export interface reviewerOptions {
+export interface generatorOptions {
   modelProvider?: ModelProvider;
   modelType?: ModelType;
   maxToken?: number;

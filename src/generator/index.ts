@@ -2,14 +2,14 @@ import { modelStore } from "../store";
 import { diffSelector } from "../diffSelector";
 import { codeProcessor } from "../codeProcessor";
 import { model } from "../model";
-import { reviewerOptions } from "../../types";
+import { generatorOptions } from "../../types";
 
 /**
- * @description 根据reviewerOptions初始化后续采用的模型类型
- * @param reviewerOptions
+ * @description 根据generatorOptions初始化后续采用的模型类型
+ * @param generatorOptions
  */
-export async function generator(reviewerOptions: reviewerOptions) {
-  const { modelProvider, modelType, maxToken } = reviewerOptions;
+export async function generator(generatorOptions: generatorOptions) {
+  const { modelProvider, modelType, maxToken } = generatorOptions;
   const modelStoreInstance = modelStore();
 
   if (modelProvider) {
