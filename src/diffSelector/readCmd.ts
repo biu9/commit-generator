@@ -52,7 +52,7 @@ export function readCmd(changedFiles: Array<IFile>): Promise<Array<IFile>> {
           console.log(
             "您选择了:\n",
             selectedIndex.map((index) => options[index]).join("\n") +
-              "\n开始code review...",
+              "\n开始generate...",
           );
           resolve(selectedIndex.map((index) => changedFiles[index]));
           rl.close();

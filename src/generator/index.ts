@@ -25,6 +25,8 @@ export async function generator(generatorOptions: generatorOptions) {
   }
 
   const targets = await diffSelector();
+
+  console.log("targets", targets);
   const splitedFiles = codeProcessor(targets);
 
   const currModel = model();
@@ -39,5 +41,5 @@ export async function generator(generatorOptions: generatorOptions) {
   );
   const res = (await Promise.all(reuqests)) as string[];
 
-  console.log(res);
+  return res.join("\n");
 }
